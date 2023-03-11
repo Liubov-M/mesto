@@ -1,0 +1,6 @@
+@media screen and (max-width: 525px) {
+    .popup__handlers {
+        margin-top: 45px; 
+        width: calc(100% - 22px*2);
+      }
+}

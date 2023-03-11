@@ -1,0 +1,13 @@
+.popup__input-container {
+  font-family: 'Inter', Arial, sans-serif;
+  width: 358px;
+  margin: auto;
+}
+.popup__input-container:first-of-type {
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 525px) {
+    .popup__input-container {
+        width: calc(100% - 22px*2);
+      }
+}

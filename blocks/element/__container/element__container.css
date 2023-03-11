@@ -1,0 +1,9 @@
+.element__container {
+  background-color: #fff; 
+  color: #000; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 79px;
+}
