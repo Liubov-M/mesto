@@ -2,15 +2,18 @@
   border: 0;
   background-color: #fff;
   cursor: pointer;
-  background-image: url(../../../images/status\ disabled.svg);
+  background-image: url(../../../images/status-disabled.svg);
   background-repeat: no-repeat;
   width: 22px;
   height: 19px;
+  padding: 0;
   margin-right: 21px;
 }
 .element__button-like:hover {
   opacity: 0.5;
+  transition: 1s ease-in-out;
 }
 .element__button-like:focus {
-  background-image: url(../../../images/status\ activ.svg);
+  background-image: url(../../../images/status-activ.svg);
+  transition: 0.5s ease-in-out;
 }

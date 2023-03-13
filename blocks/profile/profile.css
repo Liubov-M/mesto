@@ -5,14 +5,7 @@
 }
 @media screen and (max-width: 900px) {
     .profile {
-        display: flex;
         flex-direction: column;
         text-align: center;
-        padding-top: 42px;
-      }
-}
-@media screen and (max-width: 525px) {
-    .profile {
-        padding-top: 42px;
       }
 }

@@ -8,23 +8,6 @@
   </head>
   <body class="root">
     <div class="page">
-      <section class="popup">
-        <div class="popup__container">
-          <div class="popup__close-button"></div>
-          <p class="popup__heading">Редактировать профиль</p>
-          <form class="popup__input-container">
-            <input class="popup__text popup__text_name" type="text" name="firstname" placeholder="Имя Фамилия">
-            <div class="popup__line"></div>
-          </form>
-          <form class="popup__input-container">  
-            <input class="popup__text popup__text_job" type="text" name="job" placeholder="О себе"> 
-            <div class="popup__line"></div>
-          </form>
-          <form class="popup__input-container">
-            <button class='popup__submit-button' type='submit'>Сохранить</button>
-          </form>
-        </div>  
-      </section>  
       <header class="header">
         <img src="./images/Logo.svg" alt="логотип Mesto" class="header__logo">
       </header>
@@ -34,59 +17,70 @@
           <div class="profile__info">
             <h1 class="profile__info-name">Жак-Ив Кусто</h1>
             <p class="profile__info-job">Исследователь океана</p>
-            <button class="profile__edit-button"></button>
+            <button class="profile__edit-button" type="button"></button>
           </div>
-          <button class="profile__button"></button>
+          <button class="profile__button" type="button"></button>
         </section>
-        <section class="elements">
-          <figure class="element">
-            <img class="element__image" src="./images/Москва.jpg" alt="Живописный мост над Москвой рекой">
-            <figcaption class="element__container"> 
-              <h2 class="element__title">Москва</h2>
-              <button class="element__button-like"></button>
-            </figcaption>
-          </figure>
-          <figure class="element">
-            <img class="element__image" src="./images/Тюмень.jpg" alt="Храм в лучах закатного солнца">
-            <figcaption class="element__container">
-              <h2 class="element__title">Тюмень</h2>
-              <button class="element__button-like"></button>
-            </figcaption>
-          </figure>
-          <figure class="element">
-            <img class="element__image" src="./images/республика_Коми.jpg" alt="Снежные берега зимней реки">
-            <figcaption class="element__container">
-              <h2 class="element__title">Коми</h2>
-              <button class="element__button-like"></button>
-            </figcaption>
-          </figure>
-          <figure class="element">
-            <img class="element__image" src="./images/Красноярск.jpg" alt="Лесное озеро летним днем">
-            <figcaption class="element__container">
-              <h2 class="element__title">Красноярск</h2>
-              <button class="element__button-like"></button>
-            </figcaption>
-          </figure>
-          <figure class="element">
-            <img class="element__image" src="./images/Байкал.jpg" alt="Причудливые узоры на льду зимний Байкал">
-            <figcaption class="element__container">
-              <h2 class="element__title">Байкал</h2>
-              <button class="element__button-like"></button>
-            </figcaption>
-          </figure>
-          <figure class="element">
-            <img class="element__image" src="./images/Кучерла.jpg" alt="Дорога через поле на фоне заснеженных вершин">
-            <figcaption class="element__container">
-              <h2 class="element__title">Кучерла</h2>
-              <button class="element__button-like"></button>
-            </figcaption>
-          </figure>
+        <section class="photo-galery">
+          <ul class="elements">
+            <li class="element">
+              <img class="element__image" src="./images/Москва.jpg" alt="Живописный мост над Москвой рекой">
+              <div class="element__container">
+                <h2 class="element__title">Москваvjcrdfvjcrdfvcfrd</h2>
+                <button class="element__button-like" type="button"></button>
+              </div>
+            </li>
+            <li class="element">
+              <img class="element__image" src="./images/Тюмень.jpg" alt="Храм в лучах закатного солнца">
+              <div class="element__container">
+                <h2 class="element__title">Тюмень</h2>
+                <button class="element__button-like" type="button"></button>
+              </div>
+            </li>
+            <li class="element">
+              <img class="element__image" src="./images/республика_Коми.jpg" alt="Снежные берега зимней реки">
+              <div class="element__container">
+                <h2 class="element__title">Коми</h2>
+                <button class="element__button-like" type="button"></button>
+              </div>
+            </li>
+            <li class="element">
+              <img class="element__image" src="./images/Красноярск.jpg" alt="Лесное озеро летним днем">
+              <div class="element__container">
+                <h2 class="element__title">Красноярск</h2>
+                <button class="element__button-like" type="button"></button>
+              </div>
+            </li>
+            <li class="element">
+              <img class="element__image" src="./images/Байкал.jpg" alt="Причудливые узоры на льду зимний Байкал">
+              <div class="element__container">
+                <h2 class="element__title">Байкал</h2>
+                <button class="element__button-like" type="button"></button>
+              </div>
+            </li>
+            <li class="element">
+              <img class="element__image" src="./images/Кучерла.jpg" alt="Дорога через поле на фоне заснеженных вершин">
+              <div class="element__container">
+                <h2 class="element__title">Кучерла</h2>
+                <button class="element__button-like" type="button"></button>
+              </div>
+            </li>
+          </ul>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
       </footer>
+      <section class="popup">
+        <form class="popup__container" name="profile-form">
+          <button class="popup__close-button" type="button"></button>
+          <h2 class="popup__heading">Редактировать профиль</h2>
+          <input class="popup__text" type="text" name="firstname" placeholder="Имя Фамилия">
+          <input class="popup__text" type="text" name="job" placeholder="О себе">
+          <button class="popup__submit-button" type="submit">Сохранить</button>
+        </form>
+      </section>
     </div>
-    <script src="scripts/index.js"></script> 
+    <script src="scripts/index.js"></script>
   </body>
 </html>
