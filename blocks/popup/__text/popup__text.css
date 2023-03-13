@@ -18,7 +18,7 @@
   margin-bottom: 31px;
 }
 .popup__text:focus {
-  outline: #545454 solid 1px;;
+  outline: #545454 solid 1px;
 }
 @media screen and (max-width: 525px) {
     .popup__text {
