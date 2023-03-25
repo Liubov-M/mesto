@@ -22,56 +22,23 @@
           <button class="profile__button" type="button"></button>
         </section>
         <section class="photo-galery">
-          <ul class="elements">
-            <li class="element">
-              <img class="element__image" src="./images/Москва.jpg" alt="Живописный мост над Москвой рекой">
-              <div class="element__container">
-                <h2 class="element__title">Москва</h2>
-                <button class="element__button-like" type="button"></button>
-              </div>
-            </li>
-            <li class="element">
-              <img class="element__image" src="./images/Тюмень.jpg" alt="Храм в лучах закатного солнца">
-              <div class="element__container">
-                <h2 class="element__title">Тюмень</h2>
-                <button class="element__button-like" type="button"></button>
-              </div>
-            </li>
-            <li class="element">
-              <img class="element__image" src="./images/республика_Коми.jpg" alt="Снежные берега зимней реки">
-              <div class="element__container">
-                <h2 class="element__title">Коми</h2>
-                <button class="element__button-like" type="button"></button>
-              </div>
-            </li>
-            <li class="element">
-              <img class="element__image" src="./images/Красноярск.jpg" alt="Лесное озеро летним днем">
-              <div class="element__container">
-                <h2 class="element__title">Красноярск</h2>
-                <button class="element__button-like" type="button"></button>
-              </div>
-            </li>
-            <li class="element">
-              <img class="element__image" src="./images/Байкал.jpg" alt="Причудливые узоры на льду зимний Байкал">
-              <div class="element__container">
-                <h2 class="element__title">Байкал</h2>
-                <button class="element__button-like" type="button"></button>
-              </div>
-            </li>
-            <li class="element">
-              <img class="element__image" src="./images/Кучерла.jpg" alt="Дорога через поле на фоне заснеженных вершин">
-              <div class="element__container">
-                <h2 class="element__title">Кучерла</h2>
-                <button class="element__button-like" type="button"></button>
-              </div>
-            </li>
-          </ul>
+          <ul class="elements"></ul>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
       </footer>
-      <section class="popup">
+      <template class="elements-template">
+        <li class="element">
+          <img class="element__image" src="#">
+          <button class="element__delete-button"></button>
+          <div class="element__container">
+            <h2 class="element__title"></h2>
+            <button class="element__button-like" type="button"></button>
+          </div>
+        </li>
+    </template>
+      <section class="popup" id="edit-profile">
         <form class="popup__container" name="profile-form">
           <button class="popup__close-button" type="button"></button>
           <h3 class="popup__heading">Редактировать профиль</h3>
@@ -79,6 +46,22 @@
           <input class="popup__text" type="text" name="job" placeholder="О себе">
           <button class="popup__submit-button" type="submit">Сохранить</button>
         </form>
+      </section>
+      <section class="popup" id="edit-cards">
+        <form class="popup__container" name="edit-cards">
+          <button class="popup__close-button" type="button"></button>
+          <h3 class="popup__heading">Новое место</h3>
+          <input class="popup__text" type="text" name="object" placeholder="Название">
+          <input class="popup__text" type="text" name="link" placeholder="Ссылка на картинку">
+          <button class="popup__submit-button" type="submit">Сохранить</button>
+        </form>
+      </section>
+      <section class="popup" id="open-image">
+        <div class="popup__card">
+          <img class="popup__image" src="#" alt="#">
+          <h4 class="popup__title"></h4>
+          <button class="popup__close-button" type="button"></button>
+        </div>
       </section>
     </div>
     <script src="scripts/index.js"></script>

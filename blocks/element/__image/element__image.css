@@ -3,6 +3,7 @@
   width: 282px;
   height: 282px;
   object-fit: cover;
+  cursor: pointer;
 }
 @media screen and (max-width: 900px) {
     .element__image {

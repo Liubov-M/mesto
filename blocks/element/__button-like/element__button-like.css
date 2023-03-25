@@ -1,9 +1,7 @@
 .element__button-like {
   border: 0;
-  background-color: #fff;
   cursor: pointer;
-  background-image: url(../../../images/status-disabled.svg);
-  background-repeat: no-repeat;
+  background: url(../../../images/status-disabled.svg) center no-repeat;
   width: 22px;
   height: 19px;
   padding: 0;
@@ -12,7 +10,4 @@
 }
 .element__button-like:hover {
   opacity: 0.5;
-}
-.element__button-like:focus {
-  background-image: url(../../../images/status-activ.svg);
 }
