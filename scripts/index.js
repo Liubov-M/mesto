@@ -4,7 +4,6 @@ const popupEditProfileButtonClose = popupEditProfile.querySelector('.popup__clos
 const popupEditProfileButtonOpen = document.querySelector('.profile__edit-button');
 const usernameInput = popupEditProfile.querySelector('#firstname');//это инпут
 const userActivityInput = popupEditProfile.querySelector('#job');//это инпут
-const popupEditProfileButtonSubmit = popupEditProfile.querySelector('.popup__submit-button');
 const usernameProfileInfo = document.querySelector('.profile__info-name');
 const userActivityProfileInfo = document.querySelector('.profile__info-job');
 const popupEditCard = document.querySelector('[name="cards-form"]');//это форма
@@ -27,10 +26,12 @@ const linkInputError = popupEditCard.querySelector(`.${linkInput.id}-error`);
 
 function openPopup (popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupByClickOnEsc);
 }
 
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupByClickOnEsc);
 }
 
 //сохранение данных профиля
@@ -44,9 +45,10 @@ function handleProfileFormSubmit (evt) {
 //сохранение данных галереи
 function handleCardFormSubmit (evt) {
   evt.preventDefault();
-  const item = { name:objectInput.value, link:linkInput.value}
+  const item = { name:objectInput.value, link:linkInput.value };
   renderInitialCard(item);
   evt.target.reset();
+  disableButton(evt.submitter, validationConfig);
   closePopup(popupEditCardOverlay);
 }
 
@@ -67,7 +69,7 @@ function createCard (item) {
   htmlElementCard.querySelector('.element__button-like').addEventListener('click', function(evt) {
     evt.target.classList.toggle('element__button-like_active');
   });
-  htmlElementCard.querySelector('.element__image').addEventListener('click', () => openPopupPictureZoom(item));
+  cardElementPicture.addEventListener('click', () => openPopupPictureZoom(item));
   return htmlElementCard;
 };
 
@@ -116,7 +118,6 @@ popupPictureZoomButtonClose.addEventListener('click', function () {
   popupPictureZoom.classList.toggle('popup_opened_opaque');
   closePopup(popupPictureZoom);
 });
-popupEditProfileOverlay.addEventListener('click', closePopupByClickOnOverlay);
-popupEditCardOverlay.addEventListener('click', closePopupByClickOnOverlay);
-popupPictureZoom.addEventListener('click', closePopupByClickOnOverlay);
-document.addEventListener('keydown', closePopupByClickOnEsc);
+popupEditProfileOverlay.addEventListener('mousedown', closePopupByClickOnOverlay);
+popupEditCardOverlay.addEventListener('mousedown', closePopupByClickOnOverlay);
+popupPictureZoom.addEventListener('mousedown', closePopupByClickOnOverlay);
