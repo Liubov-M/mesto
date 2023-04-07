@@ -10,7 +10,6 @@ const popupEditCard = document.querySelector('[name="cards-form"]');//это ф�
 const popupEditCardOverlay = document.querySelector('#edit-cards');
 const popupEditCardButtonClose = popupEditCard.querySelector('.popup__close-button');
 const popupEditCardButtonOpen = document.querySelector('.profile__button');
-const popupEditCardButtonSubmit = popupEditCard.querySelector('.popup__submit-button');
 const objectInput = popupEditCard.querySelector('#object');//это инпут
 const linkInput = popupEditCard.querySelector('#link');//это инпут
 const cardTemplate = document.querySelector('.elements-template').content;
