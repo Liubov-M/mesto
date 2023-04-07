@@ -1,4 +1,4 @@
-.popup__text {
+.popup__input {
   border: 0;
   padding: 0;
   font-weight: 400;
@@ -14,15 +14,11 @@
   padding-bottom: 8px;
   margin: 0 auto;
 }
-.popup__text:first-of-type {
-  margin-bottom: 31px;
-}
-.popup__text:focus {
+.popup__input:focus {
   outline: #545454 solid 1px;
 }
 @media screen and (max-width: 525px) {
-    .popup__text {
-        margin-bottom: 10px;
+    .popup__input {
         max-width: 238px;
       }
 }

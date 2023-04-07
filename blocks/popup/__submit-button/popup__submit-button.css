@@ -2,14 +2,12 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 1.21;
-  background-color: #000;
-  color: #fff;
   width: 358px;
   cursor: pointer;
-  border: 0;
   padding: 14px 0 14px;
   margin: 48px auto 37px;
   display: block;
+  border-radius: 2px;
   transition: 1s ease-in-out;
 }
 .popup__submit-button:hover {

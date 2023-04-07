@@ -30,7 +30,7 @@
       </footer>
       <template class="elements-template">
         <li class="element">
-          <img class="element__image" src="#">
+          <img class="element__image" src="#" alt="#">
           <button class="element__delete-button"></button>
           <div class="element__container">
             <h2 class="element__title"></h2>
@@ -39,21 +39,33 @@
         </li>
     </template>
       <section class="popup" id="edit-profile">
-        <form class="popup__container" name="profile-form">
+        <form class="popup__form" name="profile-form" novalidate>
           <button class="popup__close-button" type="button"></button>
           <h3 class="popup__heading">Редактировать профиль</h3>
-          <input class="popup__text" type="text" name="firstname" placeholder="Имя Фамилия">
-          <input class="popup__text" type="text" name="job" placeholder="О себе">
-          <button class="popup__submit-button" type="submit">Сохранить</button>
+            <label class="popup__label">
+              <input class="popup__input" type="text" id="firstname" placeholder="Имя Фамилия" minlength="2" maxlength="40" required>
+              <span class="popup__input-error" id="firstname-error"></span>
+            </label>
+            <label class="popup__label">
+              <input class="popup__input" type="text" id="job" placeholder="О себе" minlength="2" maxlength="200" required>
+              <span class="popup__input-error" id="job-error"></span>
+            </label>
+            <button class="popup__submit-button popup__submit-button_enabled" type="submit">Сохранить</button>
         </form>
       </section>
       <section class="popup" id="edit-cards">
-        <form class="popup__container" name="edit-cards">
+        <form class="popup__form" name="cards-form" novalidate>
           <button class="popup__close-button" type="button"></button>
           <h3 class="popup__heading">Новое место</h3>
-          <input class="popup__text" type="text" name="object" placeholder="Название">
-          <input class="popup__text" type="text" name="link" placeholder="Ссылка на картинку">
-          <button class="popup__submit-button" type="submit">Сохранить</button>
+            <label class="popup__label">
+              <input class="popup__input" type="text" id="object" placeholder="Название" minlength="1" maxlength="30" required>
+              <span class="popup__input-error" id="object-error"></span>
+            </label>
+            <label class="popup__label">
+              <input class="popup__input" type="url" id="link" placeholder="Ссылка на картинку" required>
+              <span class="popup__input-error" id="link-error"></span>
+            </label>
+            <button class="popup__submit-button popup__submit-button_enabled" type="submit">Сохранить</button>
         </form>
       </section>
       <section class="popup" id="open-image">
@@ -66,5 +78,6 @@
     </div>
     <script src="scripts/constants.js"></script>
     <script src="scripts/index.js"></script>
+    <script src="scripts/validate.js"></script>
   </body>
 </html>
