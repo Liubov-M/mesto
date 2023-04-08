@@ -1,7 +1,7 @@
 .popup__label {
   display: block;
-  height: 44px;
+  height: 30px;
 }
 .popup__label:first-of-type {
-  margin-bottom: 31px;
+  margin-bottom: 27px;
 }
