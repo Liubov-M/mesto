@@ -39,11 +39,11 @@ const checkInputValidity = (input, { errorClass, inputErrorClass, ...rest }) => 
   if (input.checkValidity()) {
     errorContainer.textContent = '';
     errorContainer.classList.remove(errorClass);
-    errorContainer.classList.add(inputErrorClass);
+    input.classList.remove(inputErrorClass);
   } else {
     errorContainer.textContent = input.validationMessage;
     errorContainer.classList.add(errorClass);
-    errorContainer.classList.remove(inputErrorClass);
+    input.classList.add(inputErrorClass);
   }
 };
 
