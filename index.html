@@ -42,30 +42,22 @@
         <form class="popup__form" name="profile-form" novalidate>
           <button class="popup__close-button" type="button"></button>
           <h3 class="popup__heading">Редактировать профиль</h3>
-            <label class="popup__label">
-              <input class="popup__input" type="text" id="firstname" placeholder="Имя Фамилия" minlength="2" maxlength="40" required>
-              <span class="popup__input-error" id="firstname-error"></span>
-            </label>
-            <label class="popup__label">
-              <input class="popup__input" type="text" id="job" placeholder="О себе" minlength="2" maxlength="200" required>
-              <span class="popup__input-error" id="job-error"></span>
-            </label>
-            <button class="popup__submit-button popup__submit-button_enabled" type="submit">Сохранить</button>
+          <input class="popup__input" type="text" id="firstname" placeholder="Имя Фамилия" minlength="2" maxlength="40" required>
+          <span class="popup__input-error" id="firstname-error"></span>
+          <input class="popup__input" type="text" id="job" placeholder="О себе" minlength="2" maxlength="200" required>
+          <span class="popup__input-error" id="job-error"></span>
+          <button class="popup__submit-button popup__submit-button_enabled" type="submit">Сохранить</button>
         </form>
       </section>
       <section class="popup" id="edit-cards">
         <form class="popup__form" name="cards-form" novalidate>
           <button class="popup__close-button" type="button"></button>
           <h3 class="popup__heading">Новое место</h3>
-            <label class="popup__label">
-              <input class="popup__input" type="text" id="object" placeholder="Название" minlength="2" maxlength="30" required>
-              <span class="popup__input-error" id="object-error"></span>
-            </label>
-            <label class="popup__label">
-              <input class="popup__input" type="url" id="link" placeholder="Ссылка на картинку" required>
-              <span class="popup__input-error" id="link-error"></span>
-            </label>
-            <button class="popup__submit-button" type="submit">Создать</button>
+          <input class="popup__input" type="text" id="object" placeholder="Название" minlength="2" maxlength="30" required>
+          <span class="popup__input-error" id="object-error"></span>
+          <input class="popup__input" type="url" id="link" placeholder="Ссылка на картинку" required>
+          <span class="popup__input-error" id="link-error"></span>
+          <button class="popup__submit-button" type="submit">Создать</button>
         </form>
       </section>
       <section class="popup" id="open-image">
