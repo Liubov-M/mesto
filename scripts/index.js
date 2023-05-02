@@ -1,3 +1,7 @@
+import initialCards from './constants.js';
+import Card from './Card.js';
+import FormValidator from './FormValidator.js';
+
 const popupEditProfile = document.querySelector('[name="profile-form"]');//это форма
 const popupEditProfileOverlay = document.querySelector('#edit-profile');
 const popupEditProfileButtonClose = popupEditProfile.querySelector('.popup__close-button');
@@ -12,16 +16,25 @@ const popupEditCardButtonClose = popupEditCard.querySelector('.popup__close-butt
 const popupEditCardButtonOpen = document.querySelector('.profile__button');
 const objectInput = popupEditCard.querySelector('#object');//это инпут
 const linkInput = popupEditCard.querySelector('#link');//это инпут
-const cardTemplate = document.querySelector('.elements-template').content;
 const cardList = document.querySelector('.elements');
 const popupPictureZoom = document.querySelector('#open-image');
 const popupPictureZoomButtonClose = popupPictureZoom.querySelector('.popup__close-button');
 const popupPictureZoomObjectImage = popupPictureZoom.querySelector('.popup__image');
 const popupPictureZoomObjectName = popupPictureZoom.querySelector('.popup__title');
-const usernameInputError = popupEditProfile.querySelector(`.${usernameInput.id}-error`);
-const userActivityInputError = popupEditProfile.querySelector(`.${userActivityInput.id}-error`);
-const objectInputError = popupEditCard.querySelector(`.${objectInput.id}-error`);
-const linkInputError = popupEditCard.querySelector(`.${linkInput.id}-error`);
+const templateSelector = '.elements-template';
+const validationConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__submit-button',
+  inactiveButtonClass: 'popup__submit-button_disabled',
+  activeButtonClass: 'popup__submit-button_enabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_visible',
+};
+const validationPopupEditProfile = new FormValidator(validationConfig, popupEditProfile);
+const validationPopupEditCard = new FormValidator(validationConfig, popupEditCard);
+validationPopupEditProfile.enableValidation();
+validationPopupEditCard.enableValidation();
 
 function openPopup (popup) {
   popup.classList.add('popup_opened');
@@ -47,36 +60,14 @@ function handleCardFormSubmit (evt) {
   const item = { name:objectInput.value, link:linkInput.value };
   renderInitialCard(item);
   evt.target.reset();
-  disableButton(evt.submitter, validationConfig);
   closePopup(popupEditCardOverlay);
 }
 
 //создание карточки
-function renderInitialCard (item) {
-  const cardInitial = createCard(item);
-  cardList.prepend(cardInitial);
+function renderInitialCard (element) {
+  const cardInitial = new Card(element, templateSelector, openPopupPictureZoom);
+  cardList.prepend(cardInitial.createCard());
 }
-
-function createCard (item) {
-  const htmlElementCard = cardTemplate.cloneNode(true);
-  const cardElementPicture = htmlElementCard.querySelector('.element__image');
-  const cardElementTitle = htmlElementCard.querySelector('.element__title');
-  cardElementPicture.src = item.link;
-  cardElementPicture.alt = item.name;
-  cardElementTitle.textContent = item.name;
-  htmlElementCard.querySelector('.element__delete-button').addEventListener('click', handleDeleteCard);
-  htmlElementCard.querySelector('.element__button-like').addEventListener('click', function(evt) {
-    evt.target.classList.toggle('element__button-like_active');
-  });
-  cardElementPicture.addEventListener('click', () => openPopupPictureZoom(item));
-  return htmlElementCard;
-};
-
-//удаление карточки
-function handleDeleteCard (evt) {
-  const card = evt.target.closest('.element');
-  card.remove();
-};
 
 //открытие попап-карточки
 function openPopupPictureZoom (item) {
