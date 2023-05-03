@@ -14,13 +14,13 @@ export default class Card {
     return cardElement;
   }
 
-  _handleLikeCard(evt) {
-    evt.target.classList.toggle('element__button-like_active');
+  _handleLikeCard = () => {
+    this._cardElementLikeButton.classList.toggle('element__button-like_active');
   }
 
-  _handleDeleteCard(evt) {
-    const card = evt.target.closest('.element');
-    card.remove();
+  _handleDeleteCard = () => {
+    this._htmlElementCard.remove();
+    this._htmlElementCard = null;
   }
 
   _handleOpenImage() {

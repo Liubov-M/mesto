@@ -96,12 +96,18 @@ function closePopupByClickOnEsc (evt) {
 initialCards.forEach(renderInitialCard);
 
 popupEditProfileButtonOpen.addEventListener('click', function () {
-  openPopup(popupEditProfileOverlay);
+  validationPopupEditProfile.resetValidationError();
   usernameInput.value = usernameProfileInfo.textContent;
-  userActivityInput.value = userActivityProfileInfo.textContent;});
+  userActivityInput.value = userActivityProfileInfo.textContent;
+  openPopup(popupEditProfileOverlay);
+});
 popupEditProfileButtonClose.addEventListener('click', () => closePopup(popupEditProfileOverlay));
 popupEditProfile.addEventListener('submit', handleProfileFormSubmit);
-popupEditCardButtonOpen.addEventListener('click', () => openPopup(popupEditCardOverlay));
+popupEditCardButtonOpen.addEventListener('click', () => {
+  validationPopupEditCard.disableButtonOnPopup();
+  popupEditCard.reset();
+  validationPopupEditCard.resetValidationError();
+  openPopup(popupEditCardOverlay);});
 popupEditCardButtonClose.addEventListener('click', () => closePopup(popupEditCardOverlay));
 popupEditCard.addEventListener('submit', handleCardFormSubmit);
 popupPictureZoomButtonClose.addEventListener('click', function () {
