@@ -3,17 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
     <title>Mesto</title>
   </head>
   <body class="root">
     <div class="page">
       <header class="header">
-        <img src="./images/Logo.svg" alt="логотип Mesto" class="header__logo">
+        <img src="<%=require('./images/Logo.svg')%>" alt="логотип Mesto" class="header__logo">
       </header>
       <main class="content">
         <section class="profile">
-          <img src="./images/image.jpg" alt="фото профиля" class="profile__info-photo">
+          <img src="<%=require('./images/image.jpg')%>" alt="фото профиля" class="profile__info-photo">
           <div class="profile__info">
             <h1 class="profile__info-name">Жак-Ив Кусто</h1>
             <p class="profile__info-job">Исследователь океана</p>
@@ -42,9 +41,9 @@
         <form class="popup__form" name="profile-form" novalidate>
           <button class="popup__close-button" type="button"></button>
           <h3 class="popup__heading">Редактировать профиль</h3>
-          <input class="popup__input" type="text" id="firstname" placeholder="Имя Фамилия" minlength="2" maxlength="40" required>
+          <input class="popup__input" type="text" name="username" id="firstname" placeholder="Имя Фамилия" minlength="2" maxlength="40" required>
           <span class="popup__input-error" id="firstname-error"></span>
-          <input class="popup__input" type="text" id="job" placeholder="О себе" minlength="2" maxlength="200" required>
+          <input class="popup__input" type="text" name="job" id="job" placeholder="О себе" minlength="2" maxlength="200" required>
           <span class="popup__input-error" id="job-error"></span>
           <button class="popup__submit-button popup__submit-button_enabled" type="submit">Сохранить</button>
         </form>
@@ -53,9 +52,9 @@
         <form class="popup__form" name="cards-form" novalidate>
           <button class="popup__close-button" type="button"></button>
           <h3 class="popup__heading">Новое место</h3>
-          <input class="popup__input" type="text" id="object" placeholder="Название" minlength="2" maxlength="30" required>
+          <input class="popup__input" type="text" name="title" id="object" placeholder="Название" minlength="2" maxlength="30" required>
           <span class="popup__input-error" id="object-error"></span>
-          <input class="popup__input" type="url" id="link" placeholder="Ссылка на картинку" required>
+          <input class="popup__input" type="url" name="link" id="link" placeholder="Ссылка на картинку" required>
           <span class="popup__input-error" id="link-error"></span>
           <button class="popup__submit-button" type="submit">Создать</button>
         </form>
@@ -68,6 +67,5 @@
         </div>
       </div>
     </div>
-    <script type="module" src="scripts/index.js"></script>
   </body>
 </html>

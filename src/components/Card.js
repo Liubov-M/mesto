@@ -23,7 +23,7 @@ export default class Card {
     this._htmlElementCard = null;
   }
 
-  _handleOpenImage() {
+  _handleOpenImage = () => {
     this._openPopupPictureZoom(this._item);
   }
 
@@ -40,8 +40,8 @@ export default class Card {
     this._cardElementDeleteButton = this._htmlElementCard.querySelector('.element__delete-button');
     this._cardElementLikeButton = this._htmlElementCard.querySelector('.element__button-like');
     this._cardElementPicture.src = this._item.link;
-    this._cardElementPicture.alt = this._item.name;
-    this._cardElementTitle.textContent = this._item.name;
+    this._cardElementPicture.alt = this._item.title;
+    this._cardElementTitle.textContent = this._item.title;
     this._setEventListeners();
     return this._htmlElementCard;
   }
