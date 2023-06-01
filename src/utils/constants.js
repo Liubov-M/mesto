@@ -29,9 +29,14 @@ const popupEditProfile = document.querySelector('[name="profile-form"]');
 const popupEditProfileButtonOpen = document.querySelector('.profile__edit-button');
 const popupEditCard = document.querySelector('[name="cards-form"]');
 const popupEditCardButtonOpen = document.querySelector('.profile__button');
+const popupEditAvatar = document.querySelector('[name="avatar-form"]');
+const avatarImage = document.querySelector('.profile__avatar');
+const popupEditAvatarButtonOpen = document.querySelector('.profile__avatar-editbutton');
 const templateSelector = '.elements-template';
 const popupEditProfileSelector = '#edit-profile';
+const popupEditAvatarSelector = '#edit-avatar';
 const popupEditCardSelector = '#edit-cards';
+const popupDeleteSelector = '#delete-popup';
 const popupImageSelector = '#open-image';
 const cardListSelector = '.elements';
 const validationConfig = {
@@ -50,9 +55,14 @@ export {
   popupEditProfileButtonOpen,
   popupEditCard,
   popupEditCardButtonOpen,
+  popupEditAvatar,
+  avatarImage,
+  popupEditAvatarButtonOpen,
   templateSelector,
   popupEditProfileSelector,
+  popupEditAvatarSelector,
   popupEditCardSelector,
+  popupDeleteSelector,
   popupImageSelector,
   cardListSelector,
   validationConfig

@@ -12,10 +12,13 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img src="<%=require('./images/image.jpg')%>" alt="фото профиля" class="profile__info-photo">
+          <div class="profile__avatar-container">
+            <img src="#" alt="фото профиля" class="profile__avatar">
+            <button type="button" class="profile__avatar-editbutton"></button>
+          </div>
           <div class="profile__info">
-            <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-            <p class="profile__info-job">Исследователь океана</p>
+            <h1 class="profile__info-name"></h1>
+            <p class="profile__info-job"></p>
             <button class="profile__edit-button" type="button"></button>
           </div>
           <button class="profile__button" type="button"></button>
@@ -34,6 +37,7 @@
           <div class="element__container">
             <h2 class="element__title"></h2>
             <button class="element__button-like" type="button"></button>
+            <span class="element__counter-like"></span>
           </div>
         </li>
       </template>
@@ -65,6 +69,22 @@
           <h4 class="popup__title"></h4>
           <button class="popup__close-button" type="button"></button>
         </div>
+      </div>
+      <div class="popup" id="edit-avatar">
+        <form class="popup__form" name="avatar-form" novalidate>
+          <button class="popup__close-button" type="button"></button>
+          <h3 class="popup__heading">Обновить аватар</h3>
+          <input class="popup__input" type="url" name="avatar" id="avatar" placeholder="Ссылка на фото" required>
+            <span class="popup__input-error" id="avatar-error"></span>
+          <button class="popup__submit-button popup__submit-button_enabled" type="submit">Сохранить</button>
+        </form>
+      </div>
+      <div class="popup" id="delete-popup">
+        <form class="popup__form" name="delete-form">
+          <button class="popup__close-button" type="button"></button>
+          <h3 class="popup__heading popup__heading_type_delete">Вы уверены?</h3>
+          <button class="popup__submit-button popup__submit-button_enabled" type="submit">Да</button>
+        </form>
       </div>
     </div>
   </body>
