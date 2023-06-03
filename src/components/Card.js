@@ -62,7 +62,7 @@ export default class Card {
     this._cardElementPicture.alt = this._item.name;
     this._cardElementTitle.textContent = this._item.name;
     this._checkLike();
-    if(this._item.userId === this._item.owner.id) {
+    if(this._item.userId === this._item.owner._id) {
       this._cardElementDeleteButton.style.display = 'block'
     } else {
       this._cardElementDeleteButton.style.display = 'none'

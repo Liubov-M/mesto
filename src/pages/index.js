@@ -22,7 +22,10 @@ import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupDeleteForm from '../components/PopupDeleteForm.js';
-import Api from '../components/Api.js'
+import Api from '../components/Api.js';
+
+let userId;
+
 const userInfo = new UserInfo({
   userNameSelector: '.profile__info-name',
   userActivitySelector: '.profile__info-job',
@@ -98,13 +101,12 @@ const popupUserInfo = new PopupWithForm(popupEditProfileSelector, (data) => {
     popupUserInfo.setDefaultText()
   })
 })
-
 popupUserInfo.setEventListeners();
 
 const popupAddCard = new PopupWithForm(popupEditCardSelector, (data) => {
-  Promise.all([api.getUserInfo(), api.addCard(data)])
-  .then(([userData, cardData]) => {
-    userData._id = cardData.userId;
+  api.addCard(data)
+  .then(cardData => {
+    cardData.userId = userId;
     cardList.addItem(createNewCard(cardData));
     popupAddCard.close()
   })
@@ -129,7 +131,6 @@ const popupAddAvatar = new PopupWithForm(popupEditAvatarSelector, (data) => {
     .finally(() => {
       popupAddAvatar.setDefaultText()
     })
-  popupAddAvatar.close()
 })
 popupAddAvatar.setEventListeners();
 
@@ -152,8 +153,9 @@ popupEditAvatarButtonOpen.addEventListener('click', () =>{
 
 Promise.all([api.getUserInfo(), api.getCards()])
 .then(([ userData, cardData ]) => {
-  userInfo.setUserInfo({ username: userData.name, job: userData.about, avatar: userData.avatar });
+  userId = userData._id;
   cardData.forEach(element => element.userId = userData._id);
+  userInfo.setUserInfo({ username: userData.name, job: userData.about, avatar: userData.avatar });
   cardList.renderItems(cardData.reverse());
 })
 .catch((error) => {
